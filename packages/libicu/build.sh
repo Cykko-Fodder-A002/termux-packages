@@ -32,3 +32,7 @@ termux_step_post_massage() {
 		termux_error_exit "file ${_GUARD_FILE} not found."
 	fi
 }
+
+termux_step_pre_configure() {
+	export ICU_DATA_FILTER_FILE="$(dirname "${BASH_SOURCE[0]}")/data-filter.json"
+}
